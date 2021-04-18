@@ -11,6 +11,10 @@ namespace TechTestSeatBooking
         public int RowNumber { get; set; }
         public List<Seat> Seats { get; set; }
 
+        /// <summary>
+        /// Returns how many empty seats there are per row
+        /// </summary>
+        /// <returns></returns>
         public int CountOfEmptySeats()
         {
             //int emptySeats = 0;
@@ -28,6 +32,10 @@ namespace TechTestSeatBooking
             return Seats.Where(seat => !seat.IsAllocated).Count();
         }
 
+        /// <summary>
+        /// Initalises 6 seats per row at program initalisation
+        /// </summary>
+        /// <param name="rowNumber"></param>
         public Row(int rowNumber)
         {
             RowNumber = rowNumber;
